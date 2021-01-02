@@ -1,0 +1,10 @@
+all_tests:
+  script:
+   - pip install -U pip
+   - pip install -r requirements.txt
+   - pip freeze
+   - python3 -m unittest discover
+   - flake8 --ignore E221,E501 --exclude .git,__pycache__ 
+  when: on_success
+  only:
+    - dev

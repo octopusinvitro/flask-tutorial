@@ -1,0 +1,12 @@
+language: python
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
+install:
+  - pip install -U pip
+  - pip install -r requirements.txt
+  - pip freeze
+script:
+  - python3 -m unittest discover
+  - flake8 --ignore E221,E501 --exclude .git,__pycache__
